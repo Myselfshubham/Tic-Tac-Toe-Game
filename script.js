@@ -40,8 +40,8 @@ function handleClick(el) {
     arr[id] = currPlayer;
     const pos = document.getElementById(`${id}`);
     pos.innerText = currPlayer;
+    currPlayer = currPlayer === "X" ? "O" : "X";
+    stat.innerText = currPlayer;
   }
   checkWinner();
-  currPlayer = currPlayer === "X" ? "O" : "X";
-  stat.innerText = currPlayer;
 }
