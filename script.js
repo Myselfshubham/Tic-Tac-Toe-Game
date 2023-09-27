@@ -26,11 +26,13 @@ function checkWinner() {
     textArea.style.fontWeight = "bold";
     textArea.style.textDecoration = "Underline";
     textArea.style.fontSize = "50px";
+    return;
   } else if (arr.includes(null) == false) {
     textArea.innerText = "It's a DRAW !!!";
     textArea.style.color = "red";
     textArea.style.fontSize = "50px";
     textArea.style.fontWeight = "bold";
+    return;
   }
 }
 
@@ -40,8 +42,11 @@ function handleClick(el) {
     arr[id] = currPlayer;
     const pos = document.getElementById(`${id}`);
     pos.innerText = currPlayer;
+    checkWinner();
     currPlayer = currPlayer === "X" ? "O" : "X";
     stat.innerText = currPlayer;
   }
-  checkWinner();
+  else {
+    checkWinner();
+  }
 }
